@@ -4,6 +4,7 @@ import { heroArr } from '../mock-heroes';
 import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { HeroService } from '../hero.service';
 
 @Component({
   imports: [
@@ -19,7 +20,15 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
   styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent {
-  heroArr = heroArr;
+  constructor(private heroService: HeroService) { }
+  getHeroes(): void {
+    this.heroArr = this.heroService.getHeroes();
+  }
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+  
+  heroArr: Hero[] = [];
   selectedHero?: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
