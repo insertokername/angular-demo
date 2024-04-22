@@ -1,5 +1,7 @@
 # AngularDemo
 
+viewable demo [here](https://insertokername.github.io/angular-demo/)
+
 **dependecies**
 - nodejs
 - npm
