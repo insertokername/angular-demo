@@ -1,13 +1,8 @@
 import { Hero } from './hero';
 
 export const heroArr: Hero[] = [
-    { id: 12, name: 'Dr. Nice' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr. IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' }
+    { id: 1, name: 'Magneta', latitude: 40.73847, longitude: -74.08579 }, //New York
+    { id: 2, name: 'Magma', latitude: 47.38078, longitude: 8.525577 },//Zurich
+    { id: 3, name: 'Bombasto', latitude: -35.32871, longitude: 149.1237 }, //Canberra
+    { id: 4, name: 'Celeritas', latitude: 39.88641, longitude: 116.3691 }, //Beijing
 ];

@@ -8,13 +8,15 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';3
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlanetComponent } from './planet/planet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
     DashboardComponent,
+    PlanetComponent,
   ],
   imports: [
     HeroDetailComponent,
