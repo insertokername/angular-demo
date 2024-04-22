@@ -22,12 +22,13 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent {
   constructor(private heroService: HeroService) { }
   getHeroes(): void {
-    this.heroArr = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroArr = heroes);
   }
   ngOnInit(): void {
     this.getHeroes();
   }
-  
+
   heroArr: Hero[] = [];
   selectedHero?: Hero;
   onSelect(hero: Hero): void {
