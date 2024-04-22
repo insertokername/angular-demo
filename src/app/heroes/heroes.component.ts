@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
-import { heroArr } from '../mock-heroes';
 import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   imports: [
@@ -14,6 +15,7 @@ import { MessageService } from '../message.service';
     NgFor,
     UpperCasePipe,
     HeroDetailComponent,
+    RouterModule,
   ],
   standalone: true,
   selector: 'app-heroes',
