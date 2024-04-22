@@ -158,8 +158,8 @@ export function main(arr) {
 
     let zoom_in_radius_magnitude = 2;
     let focused_obj = "";
-    let zoom_in_duration = 0.8;
-    let zoom_out_duration = 0.5;
+    let zoom_in_duration = 0.6;
+    let zoom_out_duration = 0.7;
 
     //makes a dialogue box
     function showDialogue(event, name) {
