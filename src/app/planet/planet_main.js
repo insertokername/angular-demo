@@ -135,12 +135,14 @@ export function main(arr) {
 
     //Renderer -or this
     let canvas = document.querySelector(".webgl");
-    const renderer = new THREE.WebGLRenderer({ canvas });
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true});
     renderer.setSize(sizes.width, sizes.heigth);
     renderer.render(scene, camera);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(1.35);
     renderer.toneMapping = THREE.ReinhardToneMapping
     renderer.toneMappingExposure = 3.3;
+    renderer.gammaOutput = true;
+    renderer.gammaFactor = 2.2;
 
 
     //Camera controls
