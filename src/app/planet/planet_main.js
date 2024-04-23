@@ -197,7 +197,7 @@ export function main(arr) {
 
 
         // Create the close button element
-        var closeButton = document.createElement('span');
+        var closeButton = document.createElement('button');
         closeButton.className = 'close-button';
         closeButton.innerHTML = 'x';
 

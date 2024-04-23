@@ -53,7 +53,7 @@ button:disabled {
 }
 
 .dialog-box {
-    background-color: #eee;
+    background-color: #e8e8e8;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -61,18 +61,22 @@ button:disabled {
     font-size: 1.2rem;
     
     position: absolute;
-    padding: 10px;
-    padding-right: 15px;
+    padding: 15px;
+    padding-right: 1.2rem;
     z-index: 3;
     font-size: 1.1rem;
 
 }
 
 .close-button {
+    background-color: #e8e8e8;
+    margin: 0;
+    padding: 0;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
     position: absolute;
     top: 2px;
     right: 2px;
     cursor: pointer;
     font-size: 1rem;
 }
-

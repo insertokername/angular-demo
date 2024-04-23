@@ -13,3 +13,8 @@ viewable demo [here](https://insertokername.github.io/angular-demo/)
 
 **running**
 `npm run start`
+
+**building for github pages update**
+when updating the source the github pages won't automatically rebuild so you have to do that manually with
+`npm run build`
+this will use ng to build in the docs folder and after a push will automatically update the github pages preview
