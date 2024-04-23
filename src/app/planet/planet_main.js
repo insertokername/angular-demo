@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 export function main(arr) {
     let camera_radius = 20;
     let is_dialogue_open = false;
+    let canvasWidth = 0.94;
 
     let locations = [
         // [47.07123, 21.944729, "pers1"],
@@ -99,7 +100,7 @@ export function main(arr) {
 
     //Sizes of the renderering window
     const sizes = {
-        width: window.innerWidth * 0.5,
+        width: window.innerWidth * canvasWidth,
         heigth: 500
     }
 
@@ -158,16 +159,17 @@ export function main(arr) {
 
     let zoom_in_radius_magnitude = 2;
     let focused_obj = "";
-    let zoom_in_duration = 0.6;
-    let zoom_out_duration = 0.7;
+    let zoom_in_duration = 0.57;
+    let zoom_out_duration = 0.57;
 
     //makes a dialogue box
     function showDialogue(event, name) {
-        var container = document.querySelector('body');
+        let container = document.querySelector('.planet-holder');
 
-        var remove_dialogue = (dialogue) => {
+        let remove_dialogue = (dialogue) => {
             container.removeChild(dialogue);
             controls.autoRotate = true;
+            controls.enableRotate = true;
             focused_obj = "";
 
             let temp_camera_pos = new THREE.Vector3(
@@ -182,8 +184,8 @@ export function main(arr) {
         };
 
         // Remove any existing dialogue boxes
-        var existingDialogues = document.querySelectorAll('.dialog-box');
-        for (var i = 0; i < existingDialogues.length; i++) {
+        let existingDialogues = document.querySelectorAll('.dialog-box');
+        for (let i = 0; i < existingDialogues.length; i++) {
             container.removeChild(existingDialogues[i]);
         }
 
@@ -191,13 +193,13 @@ export function main(arr) {
         is_dialogue_open = true;
 
         // Create the dialogue box element
-        var dialogueBox = document.createElement('div');
+        let dialogueBox = document.createElement('div');
         dialogueBox.className = 'dialog-box';
         dialogueBox.innerHTML = name;
 
 
         // Create the close button element
-        var closeButton = document.createElement('button');
+        let closeButton = document.createElement('button');
         closeButton.className = 'close-button';
         closeButton.innerHTML = 'x';
 
@@ -210,8 +212,8 @@ export function main(arr) {
         dialogueBox.appendChild(closeButton);
 
         // Set the position of the dialogue box based on the mouse click
-        dialogueBox.style.right = window.innerWidth - event.clientX + 'px'; // Subtract boxWidth from clientX to position the box to the left
-        dialogueBox.style.top = event.clientY + 'px';
+        dialogueBox.style.left = (sizes.width * 0.5 + 60) + 'px' //window.innerWidth - event.clientX + 'px'; // Subtract boxWidth from clientX to position the box to the left
+        dialogueBox.style.top = (sizes.heigth * 0.5 - 110) + 'px' //event.clientY + 'px';
 
 
         // Append the dialogue box to the container
@@ -233,7 +235,7 @@ export function main(arr) {
     //Update scene and camera sizes on resize
     window.addEventListener('resize', () => {
         //update size
-        sizes.width = window.innerWidth * 0.5;
+        sizes.width = window.innerWidth * canvasWidth;
 
         camera.useQuaternion = true;
         camera.aspect = sizes.width / sizes.heigth;
@@ -281,6 +283,7 @@ export function main(arr) {
                 let elem = locations[intersects[i].object.material.locations_index]
                 focused_obj = elem[2];
                 showDialogue(event, elem[2]);
+                controls.enableRotate = false;
                 controls.autoRotate = false;
 
                 const targetPosition = new THREE.Vector3
