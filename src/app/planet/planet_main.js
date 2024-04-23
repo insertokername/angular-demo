@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 export function main(arr) {
     let camera_radius = 20;
     let is_dialogue_open = false;
-    let canvasWidth = 0.94;
+    let canvasWidth = 1;
 
     let locations = [
         // [47.07123, 21.944729, "pers1"],

@@ -13,7 +13,7 @@ h3 {
 }
 
 body {
-    margin: 2em;
+    margin: 0;
 }
 
 body,
@@ -79,4 +79,8 @@ button:disabled {
     right: 2px;
     cursor: pointer;
     font-size: 1rem;
+}
+
+.margin-wrapper {
+    margin-left: 2em;
 }
